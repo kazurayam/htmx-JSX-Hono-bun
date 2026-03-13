@@ -1,4 +1,4 @@
-// src/index.test.ts
+// src/index.e2e.ts
 import { describe, it, expect, beforeAll, afterAll, beforeEach, afterEach } from 'bun:test';
 import { chromium } from 'playwright-chromium';
 
@@ -13,7 +13,7 @@ describe('E2E testing using playwright-chromium', async () => {
         // Create a new page and navigate to a URL
         const page = await browser.newPage();
         await page.goto('http://localhost:3000');
-        //
+        // Select the button
         const button = page.getByText('読み込み');
         expect(await button.isVisible()).toBeTrue();
         // Click the button!
